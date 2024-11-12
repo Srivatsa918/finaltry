@@ -32,7 +32,9 @@
         /* Main Background Gradient */
         .gradient-background {
             background: linear-gradient(45deg, #fbc2eb, #a6c1ee);
-            position: absolute;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
@@ -78,7 +80,7 @@
         }
 
         /* Main Content */
-        .main-content {
+        main {
             position: relative;
             text-align: center;
             padding: 100px 20px;
@@ -261,6 +263,32 @@
                 opacity: 0.6;
             }
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .services-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-item {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .main-content h2 {
+                font-size: 2.5em;
+            }
+
+            .main-content p {
+                font-size: 1em;
+            }
+
+            .contact-section input,
+            .contact-section textarea {
+                width: 80%;
+            }
+        }
     </style>
 </head>
 
@@ -278,11 +306,13 @@
     </header>
 
     <!-- Main Content Section -->
-    <section class="main-content">
+    <main class="main-content">
         <h2>Welcome to DECCTEROUS</h2>
         <p>Innovating Electronics with Integrated Circuits that Power the Future</p>
-        <button onclick="window.location.href='#contact'">Join Us Now</button>
-    </section>
+        <a href="#contact">
+            <button>Join Us Now</button>
+        </a>
+    </main>
 
     <!-- About Section -->
     <section id="about" class="about-section">
@@ -309,7 +339,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Contact Us</h2>
-        <form>
+        <form action="/submit-form" method="POST">
             <input type="text" placeholder="Your Name" required><br>
             <input type="email" placeholder="Your Email" required><br>
             <textarea placeholder="Your Message" required></textarea><br>
@@ -320,9 +350,9 @@
     <!-- Footer Section -->
     <footer>
         <p>Follow us on Social Media</p>
-        <a href="https://www.instagram.com" target="_blank">Instagram</a> | 
-        <a href="https://www.facebook.com" target="_blank">Facebook</a> | 
-        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">Instagram</a> | 
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">Facebook</a> | 
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">Twitter</a>
     </footer>
 
     <!-- Scroll Indicator -->
